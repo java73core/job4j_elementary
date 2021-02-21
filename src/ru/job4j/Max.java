@@ -5,7 +5,5 @@ public class Max {
         return left > right ? left : right;
     }
 
-    public static void main(String[] args) {
 
-    }
 }
