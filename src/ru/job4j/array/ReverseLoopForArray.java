@@ -7,7 +7,7 @@ public class ReverseLoopForArray {
             if (i % 2 == 0) {
                 System.out.println(
                         "Текущий элемент массива начиная с последнего: "
-                                + numbers[i]);
+                                + numbers[numbers.length - 1 - i]);
             }
         }
     }
