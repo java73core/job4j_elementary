@@ -1,19 +1,28 @@
 package ru.job4j.array;
 
-import static com.sun.tools.javac.jvm.ByteCodes.swap;
-
 public class Defragment {
     public static String[] compress(String[] array) {
-        String[] tempArray = new String[array.length];
-        int pos = 0;
         for (int index = 0; index < array.length; index++) {
-                if (array[index] != null) {
-                    tempArray[pos] = array[index];
-                    pos++;
+            if (array[index] == null) {
+                int point = index; /* указатель на null ячейку. */
+                for (int i = point+1; i < array.length ; i++) {
+                    if (array[i] != null) {
+                        int dest = i;
+                        swap(array, point, dest);
+                        break;
+                    }
                 }
-             System.out.print(array[index] + " ");
+                }
+            /* переместить первую не null ячейку. Нужен цикл. */
+            System.out.print(array[index] + " ");
         }
-        return tempArray;
+        return array;
+    }
+    public static String[] swap(String[] array, int point, int dest) {
+        String tmp = array[point];
+        array[point] = array[dest];
+        array[dest] = tmp;
+        return array;
     }
 
     public static void main(String[] args) {
