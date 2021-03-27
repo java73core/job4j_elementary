@@ -5,7 +5,7 @@ public class Defragment {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
                 int point = index; /* указатель на null ячейку. */
-                for (int i = point+1; i < array.length ; i++) {
+                for (int i = point + 1; i < array.length; i++) {
                     if (array[i] != null) {
                         int dest = i;
                         swap(array, point, dest);
@@ -13,8 +13,7 @@ public class Defragment {
                     }
                 }
                 }
-            /* переместить первую не null ячейку. Нужен цикл. */
-            System.out.print(array[index] + " ");
+           System.out.print(array[index] + " ");
         }
         return array;
     }
@@ -24,7 +23,6 @@ public class Defragment {
         array[dest] = tmp;
         return array;
     }
-
     public static void main(String[] args) {
         String[] input = {"I", null, "wanna", null, "be", null, "compressed"};
         String[] compressed = compress(input);

@@ -6,7 +6,6 @@ public class Factorial {
         for (int i = 1; i <= Math.abs(n); i++) {
             result *= i;
         }
-
         return result;
     }
 }

@@ -8,5 +8,5 @@ public class Greeting {
         int year = 2021;
         idea += year;
         System.out.println(idea);
-    }//Checkstyle found no problems in the file(s)
+    }
 }
